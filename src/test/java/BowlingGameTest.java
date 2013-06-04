@@ -1,8 +1,10 @@
 import org.junit.Test;
 
-class BowlingGameTest {
+public class BowlingGameTest {
 
-	@Test
+
+
+    @Test
 	public void classUnderTestShouldExist() {
 		Game game = new Game();
 	}
