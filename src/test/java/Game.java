@@ -6,4 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 public class Game {
+    public int score() {
+        return 0;  //To change body of created methods use File | Settings | File Templates.
+    }
 }
