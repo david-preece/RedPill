@@ -25,4 +25,21 @@ public class BowlingGameTest {
 		game.roll();
 	}
 
+	@Test
+	public void shouldNotScoreEvenIfRollingMany() {
+
+		final int scorePerRoll = 0;
+		final int numberOfRolls = 20;
+
+		for (int i = 0; i < numberOfRolls; i++) {
+			game.roll(scorePerRoll);
+		}
+
+		int expectedScore = 0;
+		int actualScore = game.score();
+
+		Assert.assertEquals("Rolling no score in the game resulted in score above 0", expectedScore,
+							actualScore);
+	}
+
 }
