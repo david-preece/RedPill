@@ -10,7 +10,7 @@ public class Game {
         return 0;  // Change body to return actual score
     }
 
-    public void roll() {
+    public void roll(int scorePerRoll) {
         // This will contain logic to roll
     }
 }

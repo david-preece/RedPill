@@ -22,7 +22,7 @@ public class BowlingGameTest {
 
 	@Test
 	public void shouldBeAbleToRoll() {
-		game.roll();
+		game.roll(0);
 	}
 
 	@Test
