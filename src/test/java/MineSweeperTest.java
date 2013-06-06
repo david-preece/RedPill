@@ -23,4 +23,16 @@ public class MineSweeperTest {
 
 	}
 
+	@Test
+	public void revealingASingleMineShouldWork() {
+
+		String input = "*";
+		String expectedOutput = "*";
+
+		String actualOutput = mineSweeper.reveal(input);
+
+		Assert.assertEquals("Could not reveal the hints properly", expectedOutput, actualOutput);
+
+	}
+
 }
