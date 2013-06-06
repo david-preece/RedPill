@@ -7,6 +7,11 @@
  */
 public class MineSweeper {
     public String reveal(String input) {
-        return input;  // Just to make the test pass, will add functionality later
+
+        if (input.equals("."))
+            return "0"; // Player Missed!
+        else if (input.equals("*"))
+            return "*"; // Player Hit!
+        return null;  // Something went wrong, return null;
     }
 }
