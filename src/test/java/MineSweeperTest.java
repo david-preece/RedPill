@@ -14,7 +14,7 @@ public class MineSweeperTest {
 	@Test
 	public void revealingABoardWithoutAMineShouldWork() {
 
-		String input = "0";
+		String input = ".";
 		String expectedOutput = "0";
 
 		String actualOutput = mineSweeper.reveal(input);
