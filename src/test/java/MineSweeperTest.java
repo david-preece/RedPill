@@ -35,4 +35,17 @@ public class MineSweeperTest {
 
 	}
 
+	@Test
+	public void revealingSmallBoardShouldWork() {
+
+		String input = "*.\n" + "..";
+
+		String expectedOutput = "*1\n" + "11";
+
+		String actualOutput = mineSweeper.reveal(input);
+
+		Assert.assertEquals("Could not reveal the hints properly", expectedOutput, actualOutput);
+
+	}
+
 }
