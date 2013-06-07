@@ -6,4 +6,10 @@
  * To change this template use File | Settings | File Templates.
  */
 public class StringCalculator {
+    public int add(String inputString) {
+        if (inputString.equals(""))
+            return 0;
+        else
+            return 1;
+    }
 }
