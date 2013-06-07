@@ -5,4 +5,13 @@
  * Time: 14:36
  */
 public class RomanNumeralConverter {
+    public String convert(int numberToConvert) {
+        switch (numberToConvert)
+        {
+            case 1:
+                return "I";
+            default:
+                return null;
+        }
+    }
 }
