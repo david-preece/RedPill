@@ -6,11 +6,14 @@
  * To change this template use File | Settings | File Templates.
  */
 public class Game {
+
+    private int gameScore = 0;
+
     public int score() {
-        return 0;  // Change body to return actual score
+        return gameScore;  // Change body to return actual score
     }
 
     public void roll(int scorePerRoll) {
-        // This will contain logic to roll
+        gameScore += scorePerRoll;
     }
 }
