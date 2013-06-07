@@ -22,4 +22,15 @@ public class RomanNumeralsTest {
 							actualResult);
 	}
 
+	@Test
+	public void shouldConvertTwo() {
+
+		int numberToConvert = 2;
+		String expectedResult = "II";
+		String actualResult = converter.convert(numberToConvert);
+
+		Assert.assertEquals("The converter could not convert the number properly", expectedResult,
+							actualResult);
+	}
+
 }
