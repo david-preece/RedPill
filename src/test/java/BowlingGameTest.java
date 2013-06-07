@@ -42,4 +42,20 @@ public class BowlingGameTest {
 							actualScore);
 	}
 
+	@Test
+	public void shouldCountScoreWhenScoring() {
+
+		final int scorePerRoll = 1;
+		final int numberOfRolls = 20;
+
+		for (int i = 0; i < numberOfRolls; i++) {
+			game.roll(scorePerRoll);
+		}
+
+		int expectedScore = scorePerRoll * numberOfRolls;
+		int actualScore = game.score();
+
+		Assert.assertEquals("Rolling all ones in the game did not result in 20", expectedScore, actualScore);
+	}
+
 }
