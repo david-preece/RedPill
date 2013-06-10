@@ -1,39 +1,77 @@
 public class MineSweeper {
-    public String reveal(String input) {
 
-        /**
-        if (input.equals("."))
-            return "0";
-        else
-            input = input.replace ('.', '1');
+    private String[] boardArray;
 
-        return input;    */
-
-        // Replace newlines with ^ to split the board up
-        input = input.replace('\n', '^');
+    private void setBoard (String boardInput)
+    {
+        // replace the \n with ^
+        boardInput = boardInput.replace('\n', '`');
 
         // Split the board
-        String[] lines = input.split("^");
-        String[] result = new String[lines.length];
+        this.boardArray = boardInput.split("`");
+    }
 
-        // this for loop represents each line in the board
-        for (int lineCount = 0; lineCount < lines.length; lineCount++)
+    private int testPoint (int lineCount, int pointCount)
+    {
+        try
         {
-            // This for loop represents each point in the line
-            for (int pointCount = 0; pointCount < lines[lineCount].length(); pointCount++)
-            {
-                int howManyMines = 0;
-                if (lineCount == 0)   // top row so no need to check above
-                {
-                    if (pointCount == 0) // first point, no need to check left
-                    {
-                        if (pointCount == lines[lineCount].length() - 1) // far right point, dont check right
-                        {
-                            // My head has just exploded!!!!!!!!!!!!
-                        }
-                    }
-                }
-            }
+            // This will test the point in the given position for a mine
+            if (this.boardArray[lineCount].charAt(pointCount) == '*')
+                return 1; // 1 represents a mine
+            else
+                return 0; // 0 represents nothing
+        } catch (ArrayIndexOutOfBoundsException e)
+        {
+            return 0; // 0 represents nothing
+        } catch (StringIndexOutOfBoundsException e)
+        {
+            return 0; // 0 represents nothing
         }
+    }
+
+    public String reveal(String input) {
+
+        // empty board
+        if (input.equals("."))
+            return "0";
+
+        // Setup the board
+        this.setBoard(input);
+
+        // Result
+        String result = "";
+
+        // For loop to represent each line of the board
+        for (int lineCount = 0; lineCount < this.boardArray.length; lineCount++)
+        {
+            // For loop to represent the individual points in the lines
+            for (int pointCount = 0; pointCount < this.boardArray[lineCount].length(); pointCount++)
+            {
+                if (this.boardArray[lineCount].charAt(pointCount) == '*')
+                {
+                    result += "*";
+                    continue;
+                }
+
+                // Represents the mines around the current board
+                int howManyMines = 0;
+
+                howManyMines += this.testPoint(lineCount-1, pointCount-1);  // top left
+                howManyMines += this.testPoint(lineCount-1, pointCount);    // above
+                howManyMines += this.testPoint(lineCount-1, pointCount+1);  // top right
+                howManyMines += this.testPoint(lineCount, pointCount-1);    // left
+                howManyMines += this.testPoint(lineCount, pointCount+1);    // right
+                howManyMines += this.testPoint(lineCount+1, pointCount-1);  // bottom left
+                howManyMines += this.testPoint(lineCount+1, pointCount);    // below
+                howManyMines += this.testPoint(lineCount+1, pointCount+1);  // bottom right
+
+                // Add the result to the string
+                result += howManyMines;
+            }
+            if (lineCount != (this.boardArray.length-1))    // Enter new line unless at end of board
+                result += "\n";
+        }
+
+        return result;
     }
 }

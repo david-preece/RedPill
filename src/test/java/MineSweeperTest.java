@@ -61,4 +61,16 @@ public class MineSweeperTest {
 
 	}
 
+    @Test
+    public void theUltimateTestString ()
+    {
+        String input = "**.\n" + ".*.\n" + "...";
+
+        String expectedOutput = "**2\n" + "3*2\n" + "111";
+
+        String actualOutput = mineSweeper.reveal(input);
+
+        Assert.assertEquals("You Failed David!", expectedOutput, actualOutput);
+    }
+
 }
