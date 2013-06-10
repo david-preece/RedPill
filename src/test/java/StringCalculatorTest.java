@@ -13,8 +13,6 @@ public class StringCalculatorTest {
 
 	@Test
 	public void emptyInputStringShouldResultInZero() {
-		StringCalculator calculator = new StringCalculator();
-
 		String inputString = "";
 		int expectedSum = 0;
 
@@ -22,5 +20,16 @@ public class StringCalculatorTest {
 
 		Assert.assertEquals("The calculator did not sum the numbers correctly with an empty input",
 							expectedSum, actualSum);
+	}
+
+	@Test
+	public void singleNumberInputShouldReturnTheSameNumber() {
+		String inputString = "1";
+		int expectedSum = 1;
+
+		int actualSum = calculator.add(inputString);
+
+		Assert.assertEquals("The calculator did not sum the numbers correctly with 1 argument", expectedSum,
+							actualSum);
 	}
 }
