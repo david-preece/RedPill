@@ -44,4 +44,15 @@ public class RomanNumeralsTest {
 							actualResult);
 	}
 
+	@Test
+	public void shouldConvertFive() {
+
+		int numberToConvert = 5;
+		String expectedResult = "V";
+		String actualResult = converter.convert(numberToConvert);
+
+		Assert.assertEquals("The converter could not convert the number properly", expectedResult,
+							actualResult);
+	}
+
 }
