@@ -32,4 +32,17 @@ public class StringCalculatorTest {
 		Assert.assertEquals("The calculator did not sum the numbers correctly with 1 argument", expectedSum,
 							actualSum);
 	}
+
+	@Test
+	public void twoArgumentsShouldBeAddedTogether() {
+		StringCalculator calculator = new StringCalculator();
+
+		String inputString = "1,2";
+		int expectedSum = 3;
+
+		int actualSum = calculator.add(inputString);
+
+		Assert.assertEquals("The calculator did not sum the numbers correctly with 2 arguments", expectedSum,
+							actualSum);
+	}
 }
