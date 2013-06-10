@@ -48,4 +48,17 @@ public class MineSweeperTest {
 
 	}
 
+	@Test
+	public void revealingBoardWithSpotsWithoutMinesNearByShouldWork() {
+
+		String input = "*..\n" + "...";
+
+		String expectedOutput = "*10\n" + "110";
+
+		String actualOutput = mineSweeper.reveal(input);
+
+		Assert.assertEquals("Could not reveal the hints properly", expectedOutput, actualOutput);
+
+	}
+
 }
