@@ -51,8 +51,6 @@ public class StringCalculatorTest {
 
 	@Test
 	public void unknownNumberOfArgumentsShouldBeAddedTogether() {
-		StringCalculator calculator = new StringCalculator();
-
 		StringBuilder sb = new StringBuilder();
 
 		int numberOfArguments = randomInt();
@@ -73,6 +71,17 @@ public class StringCalculatorTest {
 
 		Assert.assertEquals("The calculator did not sum the numbers correctly with " + numberOfArguments +
 							" number of arguments", expectedSum, actualSum);
+	}
+
+	@Test
+	public void linesShouldBeTreatedAsDelimiters() {
+		String inputString = "1\n2,3";
+		int expectedSum = 6;
+
+		int actualSum = calculator.add(inputString);
+
+		Assert.assertEquals("The calculator did not sum the numbers correctly with line breaks", expectedSum,
+							actualSum);
 	}
 
 	private int randomInt() {
