@@ -14,6 +14,10 @@ public class RomanNumeralConverter {
                 return "II";
             case 3:
                 return "III";
+            case 4:
+                return "VI";
+            case 5:
+                return "V";
             default:
                 return null;
         }
