@@ -33,4 +33,15 @@ public class RomanNumeralsTest {
 							actualResult);
 	}
 
+	@Test
+	public void shouldConvertThree() {
+
+		int numberToConvert = 3;
+		String expectedResult = "III";
+		String actualResult = converter.convert(numberToConvert);
+
+		Assert.assertEquals("The converter could not convert the number properly", expectedResult,
+							actualResult);
+	}
+
 }
