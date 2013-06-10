@@ -4,6 +4,8 @@ public class StringCalculator {
         if (inputString.equals(""))
             return 0;
 
+        // replace new lines
+        inputString = inputString.replace('\n', ',');
         // break up the string into an array
         String[] brokeUpInput = inputString.split(",");
 
