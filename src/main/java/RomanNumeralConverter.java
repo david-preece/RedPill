@@ -6,6 +6,13 @@
  */
 public class RomanNumeralConverter {
     public String convert(int numberToConvert) {
+
+        // Additional code to use traditional RN
+
+        String result = "";
+
+
+
         switch (numberToConvert)
         {
             case 1:
